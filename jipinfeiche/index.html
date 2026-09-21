@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极品飞车2 - 经典赛车游戏回顾与怀旧指南</title>
+    <meta name="description" content="极品飞车2 (Need for Speed II) 经典赛车游戏专题页。收录游戏背景故事、车辆图鉴、赛道攻略、下载资源及怀旧评测，重温90年代末的街头速度激情。">
+    <meta name="keywords" content="极品飞车2, Need for Speed II, 热力追踪, 怀旧游戏, 赛车游戏攻略, 下载">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff3e3e;
+            --secondary-color: #1a1a1a;
+            --accent-color: #ffcc00;
+            --text-color: #333;
+            --light-text: #f5f5f5;
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--light-text);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/nfs2car/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e63939;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* Game Overview */
+        .overview {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .overview-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .overview-text p {
+            margin-bottom: 1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        .feature-list {
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '🚗';
+            margin-right: 0.8rem;
+        }
+
+        .overview-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Vehicles Section */
+        .vehicles {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .vehicle-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vehicle-img {
+            height: 180px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .vehicle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vehicle-info {
+            padding: 1.5rem;
+        }
+
+        .vehicle-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .vehicle-info .tag {
+            display: inline-block;
+            background-color: #eee;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Tracks Section */
+        .tracks {
+            padding: 4rem 0;
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .tracks .section-title {
+            color: white;
+        }
+
+        .tracks .section-title::after {
+            background-color: var(--accent-color);
+        }
+
+        .track-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .track-item {
+            background-color: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .track-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .track-item p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Download / Resources */
+        .resources {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .download-box {
+            background: linear-gradient(135deg, #ff3e3e 0%, #cc0000 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 62, 62, 0.3);
+        }
+
+        .download-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-box p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            background-color: white;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 4rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #666;
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                position: relative;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-color);
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">极品飞车<span>2</span></a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#overview">游戏概览</a></li>
+                    <li><a href="#vehicles">经典座驾</a></li>
+                    <li><a href="#tracks">赛道环境</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#resources">下载资源</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Need for Speed II</h1>
+                <p>重温 1997 年的街头速度传奇。在速度与激情的巅峰，驾驭顶级超跑，挑战极限赛道，体验纯正的赛车游戏魅力。</p>
+                <div>
+                    <a href="#resources" class="btn">立即下载</a>
+                    <a href="#overview" class="btn btn-outline">了解更多</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="overview">
+            <div class="container">
+                <div class="overview-grid">
+                    <div class="overview-text">
+                        <h2>重返 1997：速度的巅峰</h2>
+                        <p><strong>极品飞车2 (Need for Speed II)</strong> 是 EA Sports 推出的经典赛车游戏，延续了前作的紧张刺激，并引入了全新的 3D 图形引擎和更具挑战性的对手。游戏不仅注重视觉表现，更强调车辆操控的细腻反馈。</p>
+                        <p>在这个版本中，玩家将扮演一名非法赛车手，在高速公路、城市街道和荒野赛道中与来自世界各地的车手一决高下。游戏支持高达 800x600 的分辨率，在当时堪称视觉盛宴。</p>
+                        <ul class="feature-list">
+                            <li>全 3D 渲染的车辆与赛道</li>
+                            <li>多种比赛模式（计时赛、淘汰赛、追逐赛）</li>
+                            <li>支持鼠标与键盘操作</li>
+                            <li>经典的复古音效与配乐</li>
+                        </ul>
+                    </div>
+                    <div class="overview-image">
+                        <img src="https://picsum.photos/seed/nfs2game/600/400" alt="极品飞车2游戏画面示意图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vehicles Section -->
+        <section id="vehicles" class="vehicles">
+            <div class="container">
+                <h2 class="section-title">经典座驾图鉴</h2>
+                <div class="vehicle-grid">
+                    <article class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://picsum.photos/seed/porche/400/250" alt="保时捷 911 GT2">
+                        </div>
+                        <div class="vehicle-info">
+                            <span class="tag">速度型</span>
+                            <h3>保时捷 911 GT2</h3>
+                            <p>拥有极致的加速性能和出色的过弯能力，是赛道上的速度之王。</p>
+                        </div>
+                    </article>
+
+                    <article class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://picsum.photos/seed/ferrar/400/250" alt="法拉利 F355 Spider">
+                        </div>
+                        <div class="vehicle-info">
+                            <span class="tag">平衡型</span>
+                            <h3>法拉利 F355 Spider</h3>
+                            <p>经典的敞篷跑车，平衡了动力与操控，适合多种赛道环境。</p>
+                        </div>
+                    </article>
+
+                    <article class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://picsum.photos/seed/nissan/400/250" alt="日产 R390 GT1">
+                        </div>
+                        <div class="vehicle-info">
+                            <span class="tag">耐力型</span>
+                            <h3>日产 R390 GT1</h3>
+                            <p>专为耐力赛设计的原型赛车，拥有强大的引擎和稳定的底盘。</p>
+                        </div>
+                    </article>
+
+                    <article class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://picsum.photos/seed/lotus/400/250" alt="莲花 Esprit Turbo SE">
+                        </div>
+                        <div class="vehicle-info">
+                            <span class="tag">敏捷型</span>
+                            <h3>莲花 Esprit Turbo SE</h3>
+                            <p>车身紧凑，转向精准，在狭窄的赛道中表现尤为出色。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracks Section -->
+        <section id="tracks" class="tracks">
+            <div class="container">
+                <h2 class="section-title">著名赛道环境</h2>
+                <div class="track-list">
+                    <div class="track-item">
+                        <h3>沙漠公路</h3>
+                        <p>起伏的沙丘和蜿蜒的公路构成了极具挑战性的环境。在这里，空气稀薄，考验着车辆的悬挂系统。</p>
+                    </div>
+                    <div class="track-item">
+                        <h3>工业港口</h3>
+                        <p>充满集装箱和起重机的工业区，路面湿滑且障碍物众多，需要极高的驾驶技巧来应对。</p>
+                    </div>
+                    <div class="track-item">
+                        <h3>阿尔卑斯山口</h3>
+                        <p>穿越雪山隧道与盘山公路，寒冷的气候和急弯是这里最大的敌人，也是展现漂移技术的绝佳场所。</p>
+                    </div>
+                    <div class="track-item">
+                        <h3>东京夜景</h3>
+                        <p>繁华都市的霓虹灯光下，穿梭于摩天大楼之间，感受都市赛车带来的压迫感与刺激感。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources / Download -->
+        <section id="resources" class="resources">
+            <div class="container">
+                <div class="download-box">
+                    <h3>准备好挑战了吗？</h3>
+                    <p>下载极品飞车2完整版，体验原汁原味的复古赛车乐趣。支持 Windows 95/98/XP 系统环境。</p>
+                    <a href="#" class="download-btn">获取安装包 (15MB)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">极品飞车2支持哪些操作系统？</div>
+                    <div class="faq-answer">
+                        <p>极品飞车2原版主要支持 Windows 95 和 Windows 98 操作系统。对于 Windows XP 或更高版本，通常需要使用兼容性模式或 DOSBox 等模拟器才能正常运行。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">游戏中如何解锁隐藏车辆？</div>
+                    <div class="faq-answer">
+                        <p>在游戏主菜单中，通常需要通过特定的按键组合或在特定模式下完成特定任务来解锁隐藏的车辆。建议查看游戏手册或在线攻略获取详细步骤。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">极品飞车2的画质如何？</div>
+                    <div class="faq-answer">
+                        <p>作为 1997 年发布的游戏，极品飞车2在当时拥有领先于时代的 3D 图形技术。虽然与现代游戏相比画质已显陈旧，但其独特的风格和光影效果依然具有收藏价值。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">游戏是否支持多人联机？</div>
+                    <div class="faq-answer">
+                        <p>部分版本和补丁支持局域网联机对战，但较为罕见。大多数玩家选择通过模拟器进行单机怀旧体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p>本站致力于为经典赛车游戏爱好者提供怀旧资源与攻略指南。所有游戏资源版权归原作者所有，仅供学习交流使用。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#overview">游戏概览</a></li>
+                        <li><a href="#vehicles">车辆图鉴</a></li>
+                        <li><a href="#tracks">赛道攻略</a></li>
+                        <li><a href="#resources">下载中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">EA Sports 官网</a></li>
+                        <li><a href="#">游戏百科</a></li>
+                        <li><a href="#">玩家社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 极品飞车2怀旧指南. All rights reserved. 本页面为静态展示页，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navList = document.querySelector('#nav-list');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    navList.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
