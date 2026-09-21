@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="特勤机甲队 - 介绍特勤机甲队系列作品的机甲设定、角色档案、机体性能分析及剧情深度解析，为机甲爱好者和动漫迷提供详尽的资料库。">
+    <meta name="keywords" content="特勤机甲队,机甲,动漫,科幻,机体设定,角色图鉴">
+    <title>特勤机甲队-机甲设定、角色图鉴与剧情深度解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --secondary-color: #34495e;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(231, 76, 60, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #bdc3c7;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Feature Grid (Mecha Specs) */
+        .mecha-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mecha-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+
+        .mecha-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .mecha-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mecha-info {
+            padding: 1.5rem;
+        }
+
+        .mecha-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .mecha-info .specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .mecha-info .specs span {
+            background-color: #f8f9fa;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+
+        .mecha-info p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* Character Section */
+        .character-section {
+            background-color: white;
+        }
+
+        .char-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .char-item {
+            text-align: center;
+        }
+
+        .char-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 3px solid var(--bg-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .char-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .char-item .role {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Storyline Section */
+        .storyline-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .story-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .story-visual {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.1);
+            font-size: 3rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .story-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://picsum.photos/seed/tech/600/400') center/cover;
+            opacity: 0.4;
+            mix-blend-mode: multiply;
+        }
+
+        .story-visual span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline {
+            margin-top: 2rem;
+            border-left: 2px solid #eee;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.2rem;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: #fff;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #555;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .storyline-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">特勤<span>机甲队</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#mecha" class="active">机体图鉴</a></li>
+                    <li><a href="#characters">角色档案</a></li>
+                    <li><a href="#story">剧情解析</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>特勤机甲队</h1>
+                <p>探索高科技机甲战斗的硬核世界，解析机体性能、战术配置与角色背景，为机甲迷提供全方位的资料库。</p>
+                <a href="#mecha" class="btn">查看机体列表</a>
+            </div>
+        </section>
+
+        <!-- Mecha Specs Section -->
+        <section id="mecha" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心机体图鉴</h2>
+                    <p>特勤机甲队中标志性的装甲战斗服，设计理念融合了人体工学与重型火力输出。</p>
+                </div>
+                <div class="mecha-grid">
+                    <!-- Card 1 -->
+                    <article class="mecha-card">
+                        <img src="https://picsum.photos/seed/mecha1/400/250" alt="特勤机甲队机体" class="mecha-image">
+                        <div class="mecha-info">
+                            <h3>MT-004 装甲服</h3>
+                            <div class="specs">
+                                <span>类型: 携带型</span>
+                                <span>火力: 高</span>
+                            </div>
+                            <p>特勤机甲队的主力装备，具备强大的机动性和护盾发生器，能够适应多种复杂地形作战。采用纳米纤维增强材料。</p>
+                            <a href="#" style="color: var(--accent-color); font-weight: 600;">详情参数 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="mecha-card">
+                        <img src="https://picsum.photos/seed/mecha2/400/250" alt="特勤机甲队机体" class="mecha-image">
+                        <div class="mecha-info">
+                            <h3>MT-005 重装型</h3>
+                            <div class="specs">
+                                <span>类型: 重型</span>
+                                <span>火力: 极高</span>
+                            </div>
+                            <p>针对大规模地面战争设计的重型装甲服，装备多管加特林机枪与火箭发射器，正面防御力极强，但机动性相对较低。</p>
+                            <a href="#" style="color: var(--accent-color); font-weight: 600;">详情参数 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="mecha-card">
+                        <img src="https://picsum.photos/seed/mecha3/400/250" alt="特勤机甲队机体" class="mecha-image">
+                        <div class="mecha-info">
+                            <h3>MT-006 突击型</h3>
+                            <div class="specs">
+                                <span>类型: 突击</span>
+                                <span>速度: 极快</span>
+                            </div>
+                            <p>专为特种渗透任务设计的轻型装甲服，配备推进器与隐形装置，擅长快速突袭和侦察任务，牺牲部分装甲换取极致速度。</p>
+                            <a href="#" style="color: var(--accent-color); font-weight: 600;">详情参数 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="section character-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>主要角色档案</h2>
+                    <p>了解驾驶机甲的精英战士及其背后的故事。</p>
+                </div>
+                <div class="char-list">
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/char1/200/200" alt="角色头像" class="char-avatar">
+                        <h4>索菲亚</h4>
+                        <p class="role">队长 / 驾驶员</p>
+                    </div>
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/char2/200/200" alt="角色头像" class="char-avatar">
+                        <h4>雷恩</h4>
+                        <p class="role">突击手 / 驾驶员</p>
+                    </div>
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/char3/200/200" alt="角色头像" class="char-avatar">
+                        <h4>艾米</h4>
+                        <p class="role">技术专家 / 后勤</p>
+                    </div>
+                    <div class="char-item">
+                        <img src="https://picsum.photos/seed/char4/200/200" alt="角色头像" class="char-avatar">
+                        <h4>凯尔</h4>
+                        <p class="role">狙击手 / 驾驶员</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Storyline Section -->
+        <section id="story" class="section">
+            <div class="container">
+                <div class="storyline-container">
+                    <div class="story-content">
+                        <h2>剧情背景与世界观</h2>
+                        <p>故事背景设定在一个近未来的地球，人类面临着前所未有的外星生物威胁。为了应对这一危机，各国组建了特种机甲部队。</p>
+                        <p>特勤机甲队隶属于最高防卫机构，主要负责执行高风险的渗透任务和定点清除行动。队员们在日常训练中不仅要熟练掌握驾驶技术，更要面对机体故障、战场压力以及人性考验。随着剧情推进，队员之间的关系不断变化，从单纯的战友发展为生死与共的家人。</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>初次集结</h4>
+                                <p>新兵选拔开始，五名性格迥异的精英汇聚一堂。</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>首次实战</h4>
+                                <p>遭遇外星生物袭击，特勤机甲队首次验证了装备的有效性。</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>危机爆发</h4>
+                                <p>敌方阵营发现机甲的秘密，战局全面升级。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-visual">
+                        <span>MECHA BATTLE SCENE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题 (FAQ)</h2>
+                    <p>关于特勤机甲队设定与观看指南的解答。</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">特勤机甲队的核心战斗服是如何运作的？</div>
+                        <div class="faq-answer">
+                            <p>核心战斗服通常由外骨骼动力系统驱动，能够大幅增强穿戴者的力量和反应速度。同时，它集成了护盾发生器和武器挂载点，通过神经连接实现精准操控。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">在哪里可以观看完整的特勤机甲队动画或漫画？</div>
+                        <div class="faq-answer">
+                            <p>本页面为资料整理站。建议通过官方授权的流媒体平台或正版漫画APP搜索相关关键词进行观看。支持正版是创作者最大的动力。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">机甲的装甲材料有什么特殊之处？</div>
+                        <div class="faq-answer">
+                            <p>特勤机甲队的装甲多采用复合陶瓷与纳米金属混合材料，既保证了轻量化以便于机动，又具备防弹和防辐射能力，能够抵御常规小口径武器的直击。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col" style="flex: 2; min-width: 250px;">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 1rem; display: inline-block;">特勤<span>机甲队</span></a>
+                    <p style="font-size: 0.9rem; color: #95a5a6;">
+                        致力于提供最详尽的机甲设定解析、角色图鉴与剧情讨论。本站为粉丝整理性质，内容仅供交流学习。
+                    </p>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#mecha">机体图鉴</a></li>
+                        <li><a href="#characters">角色介绍</a></li>
+                        <li><a href="#story">剧情解析</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" style="flex: 1; min-width: 150px;">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">官方设定集</a></li>
+                        <li><a href="#">同人创作</a></li>
+                        <li><a href="#">周边商品</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 特勤机甲队资料站. All Rights Reserved. 本站不隶属于任何官方机构.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
