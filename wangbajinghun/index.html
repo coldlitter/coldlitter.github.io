@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="网吧惊魂 - 恐怖悬疑游戏推荐、经典网咖惊悚场景回顾、沉浸式恐怖体验指南及生存技巧分享。探索最令人毛骨悚然的电竞环境与恐怖故事。">
+    <meta name="keywords" content="网吧惊魂,恐怖游戏,网咖惊悚,沉浸式恐怖,生存指南,密室逃脱">
+    <title>网吧惊魂-沉浸式恐怖体验与生存指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-color: #8b0000;
+            --accent-hover: #ff0000;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(13, 13, 13, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-color)), 
+                        url('https://picsum.photos/seed/darknetcafe/1920/1080.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-main);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-color: var(--accent-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            filter: grayscale(40%);
+            transition: filter 0.3s;
+        }
+
+        .card:hover .card-img {
+            filter: grayscale(0%);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+        }
+
+        /* Game List */
+        .game-list-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+        }
+
+        .game-list-item:hover {
+            background-color: #252525;
+        }
+
+        .game-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 4px;
+            margin-right: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .game-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .difficulty-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .diff-high { background-color: rgba(139, 0, 0, 0.2); color: #ff4d4d; }
+        .diff-med { background-color: rgba(255, 165, 0, 0.2); color: orange; }
+        .diff-low { background-color: rgba(0, 128, 0, 0.2); color: #4caf50; }
+
+        /* Tips Section */
+        .tips-container {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tip-item {
+            margin-bottom: 2rem;
+        }
+
+        .tip-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .tip-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .tip-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            padding: 1rem 0;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
+            nav ul { margin-top: 1rem; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">网吧惊<span>魂</span></div>
+        <nav>
+            <ul>
+                <li><a href="#games" class="active">恐怖游戏</a></li>
+                <li><a href="#scenarios">经典场景</a></li>
+                <li><a href="#tips">生存指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索午夜网咖的未知恐惧</h1>
+            <p>重温经典恐怖游戏，体验最令人窒息的沉浸式惊悚氛围。在这里，你将面对未知的对手和隐藏在屏幕后的秘密。</p>
+            <div>
+                <a href="#games" class="btn">开始体验</a>
+                <a href="#tips" class="btn btn-outline">查看生存指南</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Recommendations -->
+    <section id="games" class="container">
+        <div class="section-header">
+            <h2 class="section-title">必玩恐怖游戏推荐</h2>
+            <p class="section-subtitle">精选最具代入感的网咖背景与恐怖题材游戏</p>
+        </div>
+        <div class="grid-3">
+            <article class="card">
+                <img src="https://picsum.photos/seed/afraid/400/250" alt="恐怖游戏封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">生存恐怖</span>
+                    <h3 class="card-title">午夜网咖传说</h3>
+                    <p class="card-desc">玩家被困在一家24小时营业的废弃网咖中，随着时间推移，屏幕上会出现奇怪的符号和无法解释的声音。</p>
+                    <div class="card-footer">
+                        <span>推荐指数：★★★★★</span>
+                        <a href="#" style="color:var(--accent-color)">详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/ghost/400/250" alt="恐怖游戏封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">动作冒险</span>
+                    <h3 class="card-title">幽灵键盘手</h3>
+                    <p class="card-desc">你正在网吧连坐，突然发现旁边的玩家操作神速且从不回头。当你试图离开时，发现出口被封锁了。</p>
+                    <div class="card-footer">
+                        <span>推荐指数：★★★★☆</span>
+                        <a href="#" style="color:var(--accent-color)">详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/monitor/400/250" alt="恐怖游戏封面" class="card-img">
+                <div class="card-body">
+                    <span class="card-tag">解谜逃脱</span>
+                    <h3 class="card-title">屏幕后的视线</h3>
+                    <p class="card-desc">通过监控摄像头观察网吧环境，寻找线索并逃离。注意，不要直视主屏幕，因为那里正盯着你。</p>
+                    <div class="card-footer">
+                        <span>推荐指数：★★★★☆</span>
+                        <a href="#" style="color:var(--accent-color)">详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Classic Scenarios -->
+    <section id="scenarios" style="background-color: #121212;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">经典网咖惊悚场景</h2>
+                <p class="section-subtitle">重温那些让你汗毛倒竖的恐怖桥段</p>
+            </div>
+            <div class="tips-container">
+                <div class="tip-item">
+                    <div class="tip-header">
+                        <div class="tip-icon">1</div>
+                        <h3 class="tip-title">空荡的机位</h3>
+                    </div>
+                    <p style="color: #ccc;">当你走进网吧最角落的房间，发现那里通常堆满了杂物，但在深夜，那里似乎坐着一个人，当你回头时，却空无一人。这是经典的“角落恐惧”。</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-header">
+                        <div class="tip-icon">2</div>
+                        <h3 class="tip-title">共享耳机</h3>
+                    </div>
+                    <p style="color: #ccc;">在玩双人游戏或看恐怖电影时，突然听到耳机里传来另一个人的呼吸声，或者看到旁边的屏幕显示的并不是你操作的画面，而是另一个视角。</p>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-header">
+                        <div class="tip-icon">3</div>
+                        <h3 class="tip-title">断网后的寂静</h3>
+                    </div>
+                    <p style="color: #ccc;">网吧突然断电或断网，在一片漆黑和嘈杂的键盘声中，你听到了一声清晰、沉重的脚步声，正朝着你的座位走来。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survival Guide -->
+    <section id="tips" class="container">
+        <div class="section-header">
+            <h2 class="section-title">网吧惊魂生存指南</h2>
+            <p class="section-subtitle">如果你不幸身陷此类情境，请遵循以下建议</p>
+        </div>
+        
+        <div class="grid-3">
+            <div class="game-list-item">
+                <div class="game-icon">👁️</div>
+                <div class="game-info">
+                    <h4 class="game-title">保持冷静与观察</h4>
+                    <p class="game-meta">切勿尖叫或惊慌失措，这会吸引注意。仔细观察周围环境，寻找安全出口或藏身之处。</p>
+                </div>
+                <span class="difficulty-badge diff-high">高难度</span>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-icon">🎧</div>
+                <div class="game-info">
+                    <h4 class="game-title">声音管理</h4>
+                    <p class="game-meta">关闭不必要的音效，专注于环境音。如果听到脚步声，判断方向和距离，不要贸然回头。</p>
+                </div>
+                <span class="difficulty-badge diff-med">中难度</span>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-icon">🚪</div>
+                <div class="game-info">
+                    <h4 class="game-title">优先寻找出口</h4>
+                    <p class="game-meta">不要试图与“怪物”正面交锋。寻找后门或窗户，利用环境优势进行逃脱。</p>
+                </div>
+                <span class="difficulty-badge diff-med">中难度</span>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-icon">🔦</div>
+                <div class="game-info">
+                    <h4 class="game-title">利用道具</h4>
+                    <p class="game-meta">在游戏中寻找手电筒、钥匙或武器。如果你在现实场景中，利用桌椅、键盘等物品进行防御。</p>
+                </div>
+                <span class="difficulty-badge diff-low">基础</span>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-icon">🤝</div>
+                <div class="game-info">
+                    <h4 class="game-title">结伴而行</h4>
+                    <p class="game-meta">如果有同伴，保持紧密联系。不要被单独隔离在任何区域，相互掩护是生存的关键。</p>
+                </div>
+                <span class="difficulty-badge diff-low">基础</span>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-icon">⚡</div>
+                <div class="game-info">
+                    <h4 class="game-title">利用环境陷阱</h4>
+                    <p class="game-meta">有些网咖布局复杂。利用摄像头死角、堆满杂物的桌子后作为掩体，等待时机。</p>
+                </div>
+                <span class="difficulty-badge diff-high">高难度</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: #121212;">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">网吧惊魂是真的吗？</div>
+                <div class="faq-answer">大多数所谓的“网吧惊魂”故事源自都市传说、网络恐怖小说或游戏剧情。现实中，正规网吧环境是安全的，通常不存在超自然现象。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">有哪些经典的恐怖游戏背景在网吧？</div>
+                <div class="faq-answer">例如《生化危机》、《寂静岭》、《逃生》以及许多独立恐怖游戏都有涉及废弃设施、医院或类似封闭空间的剧情。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何克服玩恐怖游戏的恐惧？</div>
+                <div class="faq-answer">可以尝试先观看攻略视频了解剧情，或者邀请朋友一起联机。从低难度的恐怖游戏入手，逐步适应紧张的氛围。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">深夜独自在网吧需要注意什么？</div>
+                <div class="faq-answer">注意保管好个人财物，避免沉迷游戏忽略周围环境。正规网吧通常有监控和保安，遇到可疑人员可立即向工作人员求助。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">投稿指南</a>
+            <a href="#">免责声明</a>
+            <a href="#">隐私政策</a>
+        </div>
+        <p class="copyright">&copy; 2023 网吧惊魂. 仅供娱乐与资讯分享，请勿模仿危险行为。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
