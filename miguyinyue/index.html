@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="咪咕音乐官方下载 - 中国移动旗下正版音乐平台，海量曲库、无损音质、独家首发。提供APP下载、网页版入口及会员服务指南。">
+    <meta name="keywords" content="咪咕音乐官方下载, 咪咕音乐, 咪咕音乐APP下载, 中国移动音乐, 无损音质音乐, 正版音乐平台">
+    <title>咪咕音乐官方下载 - 中国移动正版音乐平台与APP下载指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --primary-hover: #e65100;
+            --secondary-color: #1a1a1a;
+            --bg-light: #f9f9f9;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #eeeeee;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 20px;
+            left: -20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .badge-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #4caf50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: transparent;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #fff5f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 5rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .download-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .download-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .download-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-info p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .os-list {
+            margin-bottom: 2rem;
+        }
+
+        .os-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .os-item:hover {
+            border-color: var(--primary-color);
+            background-color: #fffaf8;
+        }
+
+        .os-icon {
+            font-size: 1.5rem;
+        }
+
+        .os-details h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .os-details span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .download-visual {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color), #ff8f00);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .phone-mockup {
+            width: 200px;
+            height: 400px;
+            background: #111;
+            border-radius: 40px;
+            border: 8px solid #333;
+            position: relative;
+            margin: 2rem 0;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: #fff;
+            border-radius: 32px;
+            overflow: hidden;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 24px;
+            background: #333;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 2;
+        }
+
+        .visual-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+        }
+
+        .visual-wave {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .wave-bar {
+            width: 4px;
+            background: var(--primary-color);
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 40px; }
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .article-card {
+            display: flex;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-card:last-child {
+            border-bottom: none;
+        }
+
+        .article-thumb {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .article-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .sidebar {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+        }
+
+        .sidebar h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .faq-list li {
+            margin-bottom: 1rem;
+        }
+
+        .faq-list dt {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .faq-list dd {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding-left: 1rem;
+            border-left: 2px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #999;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .download-container {
+                grid-template-columns: 1fr;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-5.5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/>
+                </svg>
+                咪咕音乐<span>官方</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">新歌首发</a></li>
+                    <li><a href="#">歌手专区</a></li>
+                    <li><a href="#">社区</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#download" class="btn btn-primary">立即下载</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>中国移动旗下正版音乐平台</h1>
+                    <p>海量曲库、Hi-Res无损音质、独家首发。咪咕音乐APP为您提供一站式正版音乐服务，随时随地畅听全球好音乐。</p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">下载APP</a>
+                        <a href="#" class="btn btn-outline">网页版播放</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/music_hero/600/400" alt="咪咕音乐APP界面展示">
+                    <div class="badge">
+                        <div class="badge-dot"></div>
+                        <span>全新版本 v7.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">为什么选择咪咕音乐？</h2>
+                <p class="section-desc">不仅仅是听歌，更是高品质的音乐生活体验</p>
+                
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Hi-Res无损音质</h3>
+                        <p>独家支持FLAC、ALAC等无损格式，还原录音室级音质，让您的耳朵享受极致盛宴。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            </svg>
+                        </div>
+                        <h3>独家首发版权</h3>
+                        <p>拥有大量独家首发专辑与版权，第一时间获取最新流行音乐，不再等待。</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>海量曲库资源</h3>
+                        <p>涵盖华语、欧美、日韩、民谣、电子等多种风格，满足您不同的音乐品味。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="download-container">
+                    <div class="download-info">
+                        <h2>立即下载咪咕音乐APP</h2>
+                        <p>支持Android与iOS双平台，支持手机、平板、电脑多端同步。快速安装，即刻享受正版音乐。</p>
+                        
+                        <div class="os-list">
+                            <div class="os-item">
+                                <div class="os-icon">📱</div>
+                                <div class="os-details">
+                                    <h4>Android 下载</h4>
+                                    <span>支持 Android 5.0 及以上版本</span>
+                                </div>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.9rem;">下载</a>
+                            </div>
+                            <div class="os-item">
+                                <div class="os-icon">🍎</div>
+                                <div class="os-details">
+                                    <h4>iOS 下载</h4>
+                                    <span>支持 iOS 10.0 及以上版本</span>
+                                </div>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.9rem;">下载</a>
+                            </div>
+                            <div class="os-item">
+                                <div class="os-icon">💻</div>
+                                <div class="os-details">
+                                    <h4>Windows 电脑版</h4>
+                                    <span>支持 Windows 7/8/10/11</span>
+                                </div>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.9rem;">下载</a>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 0.85rem; color: #999;">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            安全来源：官方网站及应用商店
+                        </p>
+                    </div>
+                    
+                    <div class="download-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <div class="visual-content">
+                                    <div style="font-size: 0.8rem; color: #333; margin-bottom: 10px;">正在播放</div>
+                                    <div class="visual-wave">
+                                        <div class="wave-bar" style="animation-delay: 0s"></div>
+                                        <div class="wave-bar" style="animation-delay: 0.1s"></div>
+                                        <div class="wave-bar" style="animation-delay: 0.2s"></div>
+                                        <div class="wave-bar" style="animation-delay: 0.3s"></div>
+                                        <div class="wave-bar" style="animation-delay: 0.4s"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 0.5rem;">高品质音乐随身听</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.9;">随时随地，想听就听</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <div class="container content-grid">
+                <div class="article-list">
+                    <h2 class="section-title" style="text-align: left;">最新资讯与指南</h2>
+                    
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/music1/200/200" alt="咪咕音乐会员活动" class="article-thumb">
+                        <div class="article-info">
+                            <h3>咪咕音乐会员权益全面升级，免费听歌新体验</h3>
+                            <p>咪咕音乐VIP会员正式上线，包含海量免费曲库、专属音效、专属封面等特权，详情请查看会员中心。</p>
+                            <div class="article-meta">2023-10-24 · 资讯</div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/music2/200/200" alt="Hi-Res音质设置教程" class="article-thumb">
+                        <div class="article-info">
+                            <h3>如何在手机上开启Hi-Res无损音质？设置教程</h3>
+                            <p>想要享受极致音质？本文将详细讲解如何在咪咕音乐APP中开启无损音质，并推荐适合的播放设备。</p>
+                            <div class="article-meta">2023-10-20 · 使用指南</div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/music3/200/200" alt="音乐社区推荐歌单" class="article-thumb">
+                        <div class="article-info">
+                            <h3>深秋治愈系歌单推荐：在旋律中寻找温暖</h3>
+                            <p>深秋时节，最适合窝在家里听歌。我们整理了一份治愈系歌单，包含民谣、轻音乐等多种风格。</p>
+                            <div class="article-meta">2023-10-18 · 社区精选</div>
+                        </div>
+                    </article>
+                </div>
+
+                <aside>
+                    <div class="sidebar">
+                        <h3>常见问题 (FAQ)</h3>
+                        <dl class="faq-list">
+                            <dt>咪咕音乐APP是免费的吗？</dt>
+                            <dd>基础音乐库免费收听，会员可享受无损音质和独家特权。</dd>
+                            
+                            <dt>下载后如何登录？</dt>
+                            <dd>支持手机号、微信、QQ等多种方式一键登录。</dd>
+                            
+                            <dt>如何注销账号？</dt>
+                            <dd>请在设置-账号管理中找到注销选项，按提示操作。</dd>
+                            
+                            <dt>支持断点续播吗？</dt>
+                            <dd>支持，在播放列表中点击歌曲即可从上次结束处继续。</dd>
+                        </dl>
+                    </div>
+                    
+                    <div class="sidebar" style="margin-top: 2rem;">
+                        <h3>热门榜单</h3>
+                        <ul style="font-size: 0.9rem; line-height: 2;">
+                            <li><a href="#">• 咪咕飙升榜</a></li>
+                            <li><a href="#">• 热门新歌榜</a></li>
+                            <li><a href="#">• 原创音乐榜</a></li>
+                            <li><a href="#">• 欧美热歌榜</a></li>
+                            <li><a href="#">• 古风精选榜</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem; color: white;">
+                        咪咕音乐<span>官方</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        中国移动旗下正版音乐平台，致力于为用户提供高品质、正版的音乐服务体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">咪咕音乐APP</a></li>
+                        <li><a href="#">咪咕音乐网页版</a></li>
+                        <li><a href="#">咪咕快游</a></li>
+                        <li><a href="#">咪咕视频</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">侵权投诉</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 咪咕音乐版权所有 | 互联网ICP备案：京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
