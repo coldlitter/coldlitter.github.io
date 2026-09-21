@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天竺少女李玲玉专题页面，提供经典影视作品回顾、个人演艺生涯介绍、经典歌曲赏析及怀旧资料整理。">
+    <meta name="keywords" content="天竺少女, 李玲玉, 西游记, 托塔李天王, 爱的奉献, 经典老歌, 怀旧影视">
+    <title>天竺少女 李玲玉-经典影视回顾与怀旧金曲专题</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Biography Section */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .bio-image {
+            position: relative;
+        }
+
+        .bio-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            object-fit: cover;
+            height: 400px;
+        }
+
+        .bio-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .bio-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .bio-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .bio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .tag {
+            background-color: var(--bg-light);
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            border: 1px solid #e9ecef;
+        }
+
+        /* Works Section */
+        .works-section {
+            background-color: var(--bg-light);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .work-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .work-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .work-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .work-body {
+            padding: 20px;
+        }
+
+        .work-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .work-body p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .work-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .work-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .work-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Songs Section */
+        .songs-section {
+            background-color: white;
+        }
+
+        .song-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .song-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .song-item:hover {
+            border-color: var(--primary-color);
+            background-color: #fff5f5;
+        }
+
+        .song-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .song-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .song-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .song-text span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .play-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            background-color: #c92a37;
+            transform: scale(1.1);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f1f1f1;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: var(--text-dark);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 15px;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-image img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>✦</span> 天竺少女李玲玉
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#bio">人物简介</a></li>
+                    <li><a href="#works">经典作品</a></li>
+                    <li><a href="#songs">怀旧金曲</a></li>
+                    <li><a href="#quote">经典语录</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>天竺少女李玲玉</h1>
+                <p>重温经典影视作品，聆听那段永不褪色的旋律。她是《西游记》中灵动可爱的玉兔精，也是乐坛备受喜爱的甜歌皇后。</p>
+                <div class="hero-btns">
+                    <a href="#works" class="btn">探索作品</a>
+                    <a href="#songs" class="btn btn-outline">聆听金曲</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio Section -->
+        <section id="bio" class="container">
+            <div class="section-title">
+                <h2>人物简介</h2>
+                <p>了解李玲玉的演艺生涯与艺术成就</p>
+            </div>
+            <div class="bio-grid">
+                <div class="bio-image">
+                    <img src="https://picsum.photos/seed/lily/400/500" alt="李玲玉照片">
+                    <div class="bio-badge">国家一级演员</div>
+                </div>
+                <div class="bio-content">
+                    <h3>甜歌皇后李玲玉</h3>
+                    <p>李玲玉，中国内地著名女歌手、演员。她以甜美圆润的嗓音和极具亲和力的表演风格著称，在20世纪80、90年代红极一时。她在86版电视剧《西游记》中饰演“玉兔精”一角，凭借灵动俏皮的形象和精彩演绎，成为几代观众心中的经典记忆。</p>
+                    <p>除了影视表演，李玲玉在音乐领域亦有极高造诣。她演唱的《女儿情》、《天竺少女》等歌曲，至今仍被广泛传唱，具有极高的传唱度和艺术价值。她曾获得多项音乐奖项，被誉为“甜歌皇后”。</p>
+                    <div class="bio-tags">
+                        <span class="tag">甜歌皇后</span>
+                        <span class="tag">国家一级演员</span>
+                        <span class="tag">玉兔精扮演者</span>
+                        <span class="tag">西游记</span>
+                        <span class="tag">经典老歌</span>
+                        <span class="tag">影视演员</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>经典影视作品</h2>
+                    <p>回顾李玲玉在影视领域的精彩表现</p>
+                </div>
+                <div class="works-grid">
+                    <article class="work-card">
+                        <div class="work-img">
+                            <span class="work-category">电视剧</span>
+                            <img src="https://picsum.photos/seed/monk/400/300" alt="西游记剧照">
+                        </div>
+                        <div class="work-body">
+                            <h3>《西游记》（1986版）</h3>
+                            <p>饰演玉兔精。在“天竺收玉兔”一集中，李玲玉将玉兔精的调皮捣蛋与深情执着演绎得淋漓尽致，成为全剧最令人印象深刻的角色之一。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-img">
+                            <span class="work-category">电视剧</span>
+                            <img src="https://picsum.photos/seed/song/400/300" alt="红楼梦剧照">
+                        </div>
+                        <div class="work-body">
+                            <h3>《红楼梦》（1987版）</h3>
+                            <p>饰演太虚幻境仙子及贾宝玉的幻相。李玲玉清冷空灵的嗓音为该剧增添了浓厚的神话色彩，展现了其多变的表演风格。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-img">
+                            <span class="work-category">电视剧</span>
+                            <img src="https://picsum.photos/seed/drama/400/300" alt="都市剧剧照">
+                        </div>
+                        <div class="work-body">
+                            <h3>《夫妻双双把家还》</h3>
+                            <p>主演古装轻喜剧。在剧中饰演女主角，凭借精湛的演技和甜美的外形，塑造了多个深入人心的荧幕形象。</p>
+                            <a href="#" class="work-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Songs Section -->
+        <section id="songs" class="songs-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>怀旧金曲</h2>
+                    <p>聆听那些年我们一起听过的经典旋律</p>
+                </div>
+                <div class="song-list">
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-icon">♫</div>
+                            <div class="song-text">
+                                <h4>《天竺少女》</h4>
+                                <span>电视剧《西游记》插曲</span>
+                            </div>
+                        </div>
+                        <button class="play-btn" aria-label="播放歌曲">▶</button>
+                    </div>
+
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-icon">♫</div>
+                            <div class="song-text">
+                                <h4>《女儿情》</h4>
+                                <span>电视剧《西游记》插曲</span>
+                            </div>
+                        </div>
+                        <button class="play-btn" aria-label="播放歌曲">▶</button>
+                    </div>
+
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-icon">♫</div>
+                            <div class="song-text">
+                                <h4>《相思》</h4>
+                                <span>电视剧《西游记》插曲</span>
+                            </div>
+                        </div>
+                        <button class="play-btn" aria-label="播放歌曲">▶</button>
+                    </div>
+
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-icon">♫</div>
+                            <div class="song-text">
+                                <h4>《粉墨人生》</h4>
+                                <span>电视剧《红楼梦》插曲</span>
+                            </div>
+                        </div>
+                        <button class="play-btn" aria-label="播放歌曲">▶</button>
+                    </div>
+
+                    <div class="song-item">
+                        <div class="song-info">
+                            <div class="song-icon">♫</div>
+                            <div class="song-text">
+                                <h4>《入戏》</h4>
+                                <span>影视原声带</span>
+                            </div>
+                        </div>
+                        <button class="play-btn" aria-label="播放歌曲">▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section id="quote" class="quote-section">
+            <div class="quote-text">
+                “人生如戏，戏如人生。每一个角色都是我生命中的一次修行。”
+            </div>
+            <div class="quote-author">—— 李玲玉</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">联系方式</a>
+            <a href="#">免责声明</a>
+        </div>
+        <p>&copy; 2023 天竺少女李玲玉专题站. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">本站为粉丝怀旧专题页面，非官方机构。</p>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('show');
+            });
+        });
+
+        // Simple Play Button Interaction (Visual Feedback)
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const isPlaying = this.getAttribute('data-playing') === 'true';
+                
+                if (!isPlaying) {
+                    this.textContent = '❚❚';
+                    this.setAttribute('data-playing', 'true');
+                    // In a real app, this would start audio playback
+                } else {
+                    this.textContent = '▶';
+                    this.setAttribute('data-playing', 'false');
+                    // In a real app, this would pause audio playback
+                }
+            });
+        });
+    </script>
+</body>
+</html>
